@@ -1,15 +1,11 @@
-# Ignorer tout WordPress
-wp-admin/
-wp-includes/
-wp-content/*
+# Ignorer tout par défaut
+*
 
-# Garder uniquement le thème acaee
+# Autoriser Git
+!.gitignore
+
+# Autoriser le thème uniquement
+!wp-content/
 !wp-content/themes/
 !wp-content/themes/acaae/
 !wp-content/themes/acaae/**
-
-# (optionnel mais recommandé)
-wp-config.php
-*.log
-.DS_Store
-node_modules/

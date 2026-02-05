@@ -1,0 +1,43 @@
+# =========================
+# WordPress core
+# =========================
+/wp-admin/
+/wp-includes/
+/wp-content/index.php
+/wp-content/plugins/
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/languages/
+/wp-content/mu-plugins/
+
+# =========================
+# Autoriser uniquement le thème
+# =========================
+!/wp-content/themes/
+!/wp-content/themes/mon-theme/
+!/wp-content/themes/mon-theme/**
+
+# Si tu as un thème enfant, décommente :
+# !/wp-content/themes/mon-theme-child/
+# !/wp-content/themes/mon-theme-child/**
+
+# Ignorer les autres thèmes
+/wp-content/themes/*
+
+# =========================
+# Config & fichiers sensibles
+# =========================
+wp-config.php
+.env
+.env.*
+*.log
+*.sql
+
+# =========================
+# OS / IDE
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

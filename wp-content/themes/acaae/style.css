@@ -1,5 +1,5 @@
 /*!
-Theme Name: acaae
+Theme Name: ACAAE
 Theme URI: http://underscores.me/
 Author: Underscores.me
 Author URI: http://underscores.me/
@@ -966,4 +966,126 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
+}
+
+
+
+.site-footer {
+	background-color: #8a9e87; 
+	color: #1a1a1a;
+	padding: 60px 0 0;
+	font-family: 'Georgia', serif; 
+	font-size: 0.95rem;
+}
+
+.footer-inner {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0 40px;
+}
+
+.footer-columns {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+	padding-bottom: 50px;
+}
+
+.footer-heading {
+	font-size: 0.95rem;
+	font-weight: 700;
+	letter-spacing: 0.01em;
+	margin: 0 0 16px;
+	color: #1a1a1a;
+}
+
+.footer-links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.footer-links li a {
+	color: #1a1a1a;
+	text-decoration: none;
+	font-size: 0.9rem;
+	transition: opacity 0.2s ease;
+}
+
+.footer-links li:first-child a {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.footer-links li a:hover {
+	opacity: 0.65;
+}
+
+.footer-bottom {
+	border-top: 1px solid rgba(26, 26, 26, 0.2);
+	padding: 22px 0 28px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.footer-copy {
+	margin: 0;
+	font-size: 0.85rem;
+	color: #1a1a1a;
+}
+
+.footer-copy a {
+	color: #1a1a1a;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.footer-copy a:hover {
+	opacity: 0.65;
+}
+
+.footer-social {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+
+.social-icon {
+	display: inline-flex;
+	color: #1a1a1a;
+	transition: opacity 0.2s ease;
+}
+
+.social-icon:hover {
+	opacity: 0.6;
+}
+
+.social-icon svg {
+	width: 22px;
+	height: 22px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+	.footer-columns {
+		grid-template-columns: 1fr 1fr;
+		gap: 30px;
+	}
+}
+
+@media (max-width: 480px) {
+	.footer-columns {
+		grid-template-columns: 1fr;
+	}
+
+	.footer-bottom {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+	}
 }

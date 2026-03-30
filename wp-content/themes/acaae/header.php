@@ -1,59 +1,79 @@
 <?php
 /**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package acaae
+ * Header Template
+ * Association des Artisans
  */
-
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-
-	<?php wp_head(); ?>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'acaae' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$acaae_description = get_bloginfo( 'description', 'display' );
-			if ( $acaae_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $acaae_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+<header id="site-header" role="banner">
+    <div class="header-inner">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'acaae' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+        <!-- Logo -->
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="site-logo" rel="home" aria-label="<?php bloginfo('name'); ?> – Accueil">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/logo-acaae.png" alt="Logo" class="logo-img">
+        </a>
+
+        <!-- Navigation Desktop -->
+        <nav role="navigation" aria-label="Menu principal">
+            <ul id="main-nav">
+                <li <?php if (is_front_page()) echo 'class="current-menu-item"'; ?>>
+                    <a href="<?php echo esc_url(home_url('/')); ?>">L'association</a>
+                </li>
+                <li <?php if (is_page('nos-artisans')) echo 'class="current-menu-item"'; ?>>
+                    <a href="<?php echo esc_url(home_url('/nos-artisans')); ?>">Nos artisans</a>
+                </li>
+                <li <?php if (is_page('les-membres')) echo 'class="current-menu-item"'; ?>>
+                    <a href="<?php echo esc_url(home_url('/les-membres')); ?>">Les membres</a>
+                </li>
+                <li <?php if (is_page('galerie')) echo 'class="current-menu-item"'; ?>>
+                    <a href="<?php echo esc_url(home_url('/galerie')); ?>">Galerie</a>
+                </li>
+                <li <?php if (is_page('actualites') || is_home()) echo 'class="current-menu-item"'; ?>>
+                    <a href="<?php echo esc_url(home_url('/actualites')); ?>">Actualités</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Burger Mobile -->
+        <button class="burger" id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+    <!-- Menu Mobile -->
+    <nav aria-label="Menu mobile" id="mobile-nav">
+        <ul class="mobile-menu" id="mobile-menu" role="list">
+            <li <?php if (is_front_page()) echo 'class="current-menu-item"'; ?>>
+                <a href="<?php echo esc_url(home_url('/')); ?>">L'association</a>
+            </li>
+            <li <?php if (is_page('nos-artisans')) echo 'class="current-menu-item"'; ?>>
+                <a href="<?php echo esc_url(home_url('/nos-artisans')); ?>">Nos artisans</a>
+            </li>
+            <li <?php if (is_page('les-membres')) echo 'class="current-menu-item"'; ?>>
+                <a href="<?php echo esc_url(home_url('/les-membres')); ?>">Les membres</a>
+            </li>
+            <li <?php if (is_page('galerie')) echo 'class="current-menu-item"'; ?>>
+                <a href="<?php echo esc_url(home_url('/galerie')); ?>">Galerie</a>
+            </li>
+            <li <?php if (is_page('actualites') || is_home()) echo 'class="current-menu-item"'; ?>>
+                <a href="<?php echo esc_url(home_url('/actualites')); ?>">Actualités</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script src="<?php echo get_template_directory_uri(); ?>/js/header.js"></script>

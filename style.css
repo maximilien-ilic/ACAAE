@@ -2031,6 +2031,8 @@ textarea {
     .contact-form-grid { grid-template-columns: 1fr; }
     .contact-form-box { padding: 24px 20px; }
     .contact-info-box { padding: 24px 20px; }
+<<<<<<< ours
+=======
 /* =========================================
    PAGE NOS ARTISANS
    ========================================= */
@@ -2425,4 +2427,5 @@ textarea {
 
 @media (max-width: 480px) {
 	.membres-grid { grid-template-columns: 1fr; }
+>>>>>>> theirs
 }

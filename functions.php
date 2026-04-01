@@ -142,7 +142,9 @@ function acaae_scripts() {
 	wp_style_add_data( 'acaae-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'acaae-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+	wp_enqueue_script( 'acaae-header', get_template_directory_uri() . '/js/header.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'acaae-inscription', get_template_directory_uri() . '/js/inscription.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'acaae-newsletter', get_template_directory_uri() . '/js/newsletter.js', array(), _S_VERSION, true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -206,29 +208,3 @@ function asso_register_cpt() {
     ]);
 }
 add_action('init', 'asso_register_cpt');
-
-function acaae_register_membre_cpt() {
-	register_post_type( 'membre', array(
-		'labels' => array(
-			'name'          => 'Membres',
-			'singular_name' => 'Membre',
-			'add_new_item'  => 'Ajouter un membre',
-			'edit_item'     => 'Modifier le membre',
-		),
-		'public'       => true,
-		'has_archive'  => true,
-		'supports'     => array( 'title' ),
-		'menu_icon'    => 'dashicons-groups',
-		'rewrite'      => array( 'slug' => 'membre' ),
-		'show_in_rest' => true,
-	) );
-}
-add_action( 'init', 'acaae_register_membre_cpt' );
-
-function acaae_disable_gutenberg_membre( $use_block_editor, $post_type ) {
-	if ( $post_type === 'membre' ) {
-		return false;
-	}
-	return $use_block_editor;
-}
-add_filter( 'use_block_editor_for_post_type', 'acaae_disable_gutenberg_membre', 10, 2 );

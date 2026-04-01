@@ -14,9 +14,9 @@ get_header();
         <p>Vous souhaitez contacter un artisan ou rejoindre le collectif ? Utilisez le formulaire pour poser vos questions ou proposer votre candidature. L'équipe vous répondra rapidement afin d'échanger sur votre projet ou votre intégration.</p>
 
         <div class="cta-buttons">
-            <a href="<?php echo esc_url(home_url('/inscription')); ?>" class="cta-btn">Contactez nous</a>
+            <a href="<?php echo esc_url(home_url('/contact')); ?>" class="cta-btn">Contactez nous</a>
             <span class="cta-separator">ou</span>
-            <a href="<?php echo esc_url(home_url('/newsletter')); ?>" class="cta-btn">Rejoignez nous</a>
+            <a href="<?php echo esc_url(home_url('/inscription')); ?>" class="cta-btn">Rejoignez nous</a>
         </div>
 
         <a href="<?php echo esc_url(home_url('/association')); ?>" class="cta-more">Plus d'informations ></a>
@@ -24,3 +24,5 @@ get_header();
 </main>
 
 <?php get_footer(); ?>
+
+

@@ -1847,8 +1847,6 @@ textarea {
 @media (max-width: 500px) {
     .cta-box { padding: 40px 24px; }
     .cta-btn { width: 100%; }
-<<<<<<< Updated upstream
-=======
 }
 
 
@@ -2033,5 +2031,4 @@ textarea {
     .contact-form-grid { grid-template-columns: 1fr; }
     .contact-form-box { padding: 24px 20px; }
     .contact-info-box { padding: 24px 20px; }
->>>>>>> Stashed changes
 }

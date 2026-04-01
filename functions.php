@@ -206,3 +206,29 @@ function asso_register_cpt() {
     ]);
 }
 add_action('init', 'asso_register_cpt');
+
+function acaae_register_membre_cpt() {
+	register_post_type( 'membre', array(
+		'labels' => array(
+			'name'          => 'Membres',
+			'singular_name' => 'Membre',
+			'add_new_item'  => 'Ajouter un membre',
+			'edit_item'     => 'Modifier le membre',
+		),
+		'public'       => true,
+		'has_archive'  => true,
+		'supports'     => array( 'title' ),
+		'menu_icon'    => 'dashicons-groups',
+		'rewrite'      => array( 'slug' => 'membre' ),
+		'show_in_rest' => true,
+	) );
+}
+add_action( 'init', 'acaae_register_membre_cpt' );
+
+function acaae_disable_gutenberg_membre( $use_block_editor, $post_type ) {
+	if ( $post_type === 'membre' ) {
+		return false;
+	}
+	return $use_block_editor;
+}
+add_filter( 'use_block_editor_for_post_type', 'acaae_disable_gutenberg_membre', 10, 2 );

@@ -2031,4 +2031,398 @@ textarea {
     .contact-form-grid { grid-template-columns: 1fr; }
     .contact-form-box { padding: 24px 20px; }
     .contact-info-box { padding: 24px 20px; }
+/* =========================================
+   PAGE NOS ARTISANS
+   ========================================= */
+
+.artisans-page {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 60px 24px 80px;
+}
+
+.artisans-header {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.artisans-title {
+	font-family: 'Georgia', 'Times New Roman', serif;
+	font-size: 2.2rem;
+	font-weight: 400;
+	text-align: center;
+	color: #1a1a1a;
+	margin: 0 0 40px;
+}
+
+.artisans-filters {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 48px;
+	flex-wrap: wrap;
+}
+
+.filter-search {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 10px 14px;
+	background: #fff;
+	flex: 1;
+	min-width: 200px;
+}
+
+.filter-search svg {
+	color: #c0392b;
+	flex-shrink: 0;
+}
+
+.filter-search input {
+	border: none;
+	outline: none;
+	font-size: 0.9rem;
+	color: #555;
+	width: 100%;
+	background: transparent;
+	padding: 0;
+}
+
+.filter-search input::placeholder {
+	color: #aaa;
+}
+
+.filter-select {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.filter-select select {
+	appearance: none;
+	-webkit-appearance: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 10px 36px 10px 14px;
+	font-size: 0.9rem;
+	color: #444;
+	background: #fff;
+	cursor: pointer;
+	outline: none;
+	min-width: 160px;
+}
+
+.filter-select svg {
+	position: absolute;
+	right: 12px;
+	pointer-events: none;
+	color: #444;
+}
+
+.artisans-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+	margin-bottom: 48px;
+}
+
+.artisan-card {
+	background: #f5ede3;
+	border-radius: 2px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+}
+
+.artisan-card__image {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	background: #ddd;
+}
+
+.artisan-card__image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.3s ease;
+}
+
+.artisan-card:hover .artisan-card__image img {
+	transform: scale(1.03);
+}
+
+.artisan-card__placeholder {
+	width: 100%;
+	height: 100%;
+	background: #ccc;
+}
+
+.artisan-card__body {
+	padding: 16px 20px 20px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+	flex: 1;
+}
+
+.artisan-card__name {
+	font-family: 'Georgia', serif;
+	font-size: 0.95rem;
+	font-weight: 400;
+	color: #c0392b;
+	margin: 0;
+}
+
+.artisan-card__metier {
+	font-size: 0.85rem;
+	color: #444;
+	margin: 0;
+}
+
+.artisan-card__ville {
+	font-size: 0.85rem;
+	color: #444;
+	margin: 0;
+}
+
+.artisan-card__link {
+	display: inline-block;
+	margin-top: 10px;
+	font-size: 0.82rem;
+	color: #1a1a1a;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	transition: color 0.2s;
+}
+
+.artisan-card__link:hover {
+	color: #c0392b;
+}
+
+.artisans-empty {
+	grid-column: 1 / -1;
+	text-align: center;
+	color: #888;
+	padding: 40px 0;
+}
+
+.artisans-loadmore-wrap {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.artisans-loadmore {
+	border: 1px solid #c0392b;
+	background: transparent;
+	color: #1a1a1a;
+	font-size: 0.9rem;
+	padding: 12px 48px;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+}
+
+.artisans-loadmore:hover {
+	background: #c0392b;
+	color: #fff;
+}
+
+.artisans-loadmore:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+	.artisans-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 480px) {
+	.artisans-grid {
+		grid-template-columns: 1fr;
+	}
+	.artisans-filters {
+		flex-direction: column;
+	}
+	.filter-select select {
+		width: 100%;
+	}
+}
+
+/* =========================================
+   SINGLE ARTISAN
+   ========================================= */
+
+.artisan-single {
+	max-width: 960px;
+	margin: 60px auto;
+	padding: 0 40px;
+	display: grid;
+	grid-template-columns: 360px 1fr;
+	gap: 60px;
+	align-items: start;
+}
+
+.artisan-single__photo {
+	width: 100%;
+}
+
+.artisan-photo-large {
+	width: 100%;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	display: block;
+	border-radius: 2px;
+}
+
+.artisan-photo-placeholder {
+	width: 100%;
+	aspect-ratio: 3 / 4;
+	background: #ddd;
+	border-radius: 2px;
+}
+
+.artisan-single-info {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding-top: 8px;
+}
+
+.artisan-single-info h1 {
+	font-family: 'Georgia', serif !important;
+	font-size: 1.8rem !important;
+	font-weight: 400 !important;
+	color: #c0392b !important;
+	margin: 0 !important;
+}
+
+.artisan-single .artisan-discipline {
+	font-size: 1rem;
+	color: #444;
+	margin: 0;
+	font-style: italic;
+}
+
+.artisan-single .artisan-bio {
+	font-size: 0.95rem;
+	color: #333;
+	line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+	.artisan-single {
+		grid-template-columns: 1fr;
+		gap: 30px;
+		padding: 0 20px;
+	}
+}
+
+.membres-page {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 60px 24px 80px;
+}
+
+.membres-title {
+	font-family: 'Georgia', serif;
+	font-size: 2.2rem;
+	font-weight: 400;
+	text-align: center;
+	color: #1a1a1a;
+	margin: 0 0 48px;
+}
+
+.membres-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+
+.membre-card {
+	background: #f5ede3;
+	border-radius: 2px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.membre-card__image {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	background: #ddd;
+}
+
+.membre-card__image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.3s ease;
+}
+
+.membre-card:hover .membre-card__image img {
+	transform: scale(1.03);
+}
+
+.membre-card__placeholder {
+	width: 100%;
+	height: 100%;
+	background: #ccc;
+}
+
+.membre-card__body {
+	padding: 16px 20px 20px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+	flex: 1;
+}
+
+.membre-card__name {
+	font-family: 'Georgia', serif;
+	font-size: 0.95rem;
+	font-weight: 400;
+	color: #c0392b;
+	margin: 0;
+}
+
+.membre-card__metier {
+	font-size: 0.85rem;
+	color: #444;
+	margin: 0;
+}
+
+.membre-card__link {
+	display: inline-block;
+	margin-top: 10px;
+	font-size: 0.82rem;
+	color: #1a1a1a;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	transition: color 0.2s;
+}
+
+.membre-card__link:hover {
+	color: #c0392b;
+}
+
+@media (max-width: 768px) {
+	.membres-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+	.membres-grid { grid-template-columns: 1fr; }
 }

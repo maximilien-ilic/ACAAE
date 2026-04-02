@@ -2031,8 +2031,7 @@ textarea {
     .contact-form-grid { grid-template-columns: 1fr; }
     .contact-form-box { padding: 24px 20px; }
     .contact-info-box { padding: 24px 20px; }
-<<<<<<< ours
-=======
+}
 /* =========================================
    PAGE NOS ARTISANS
    ========================================= */
@@ -2427,5 +2426,216 @@ textarea {
 
 @media (max-width: 480px) {
 	.membres-grid { grid-template-columns: 1fr; }
->>>>>>> theirs
+}
+
+/* =========================================
+   PAGE LES ACTUALITÉS
+   ========================================= */
+
+.actualites-page {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 60px 24px 80px;
+}
+
+.actualites-title {
+	font-family: 'Georgia', serif;
+	font-size: 2.2rem;
+	font-weight: 400;
+	text-align: center;
+	color: #1a1a1a;
+	margin: 0 0 40px;
+}
+
+.actualites-filters {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 48px;
+	flex-wrap: wrap;
+}
+
+.actu-search {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	border: 1px solid #8a9e87;
+	border-radius: 4px;
+	padding: 10px 14px;
+	background: #8a9e87;
+	color: #fff;
+	flex: 1;
+	min-width: 200px;
+}
+
+.actu-search svg { color: #fff; flex-shrink: 0; }
+
+.actu-search input {
+	border: none;
+	outline: none;
+	font-size: 0.9rem;
+	color: #fff;
+	background: transparent;
+	width: 100%;
+	padding: 0;
+}
+
+.actu-search input::placeholder { color: rgba(255,255,255,0.75); }
+
+.actu-select {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.actu-select select {
+	appearance: none;
+	-webkit-appearance: none;
+	border: 1px solid #8a9e87;
+	border-radius: 4px;
+	padding: 10px 36px 10px 14px;
+	font-size: 0.9rem;
+	color: #fff;
+	background: #8a9e87;
+	cursor: pointer;
+	outline: none;
+	min-width: 140px;
+}
+
+.actu-select svg {
+	position: absolute;
+	right: 12px;
+	pointer-events: none;
+	color: #fff;
+}
+
+.actualites-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+	margin-bottom: 48px;
+}
+
+.actu-card {
+	background: #8a9e87;
+	border-radius: 2px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.actu-card__image {
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	overflow: hidden;
+	background: #6b7f68;
+}
+
+.actu-card__image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.3s ease;
+}
+
+.actu-card:hover .actu-card__image img { transform: scale(1.03); }
+
+.actu-card__placeholder {
+	width: 100%;
+	height: 100%;
+	background: #6b7f68;
+}
+
+.actu-card__body {
+	padding: 20px 24px 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	flex: 1;
+	text-align: center;
+	align-items: center;
+}
+
+.actu-card__title {
+	font-family: 'Georgia', serif;
+	font-size: 1rem;
+	font-weight: 400;
+	font-style: italic;
+	margin: 0;
+}
+
+.actu-card__title a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.actu-card__title a:hover { text-decoration: underline; }
+
+.actu-card__meta {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	font-size: 0.8rem;
+	color: #fff;
+}
+
+.actu-meta-author,
+.actu-meta-date {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.actu-card__excerpt {
+	font-size: 0.85rem;
+	color: #fff;
+	line-height: 1.6;
+	margin: 0;
+}
+
+.actu-card__link {
+	font-size: 0.82rem;
+	color: #fff;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	margin-top: 4px;
+}
+
+.actu-card__link:hover { opacity: 0.75; }
+
+.actualites-empty {
+	grid-column: 1 / -1;
+	text-align: center;
+	color: #888;
+	padding: 40px 0;
+}
+
+.actualites-loadmore-wrap {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.actualites-loadmore {
+	border: 1px solid #8a9e87;
+	background: transparent;
+	color: #1a1a1a;
+	font-size: 0.9rem;
+	padding: 12px 48px;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: background 0.2s, color 0.2s;
+}
+
+.actualites-loadmore:hover {
+	background: #8a9e87;
+	color: #fff;
+}
+
+@media (max-width: 640px) {
+	.actualites-grid { grid-template-columns: 1fr; }
+	.actualites-filters { flex-direction: column; }
+	.actu-select select { width: 100%; }
 }

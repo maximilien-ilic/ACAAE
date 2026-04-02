@@ -16,15 +16,15 @@
 				<h4 class="footer-heading"><?php esc_html_e( 'Contacts', 'acaae' ); ?></h4>
 				<ul class="footer-links">
 					<li>
-						<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact' ) ) ); ?>">
-							<?php esc_html_e( 'Message direct', 'acaae' ); ?>
+						<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'conctact-cta' ) ) ); ?>"><?php esc_html_e( 'conctact !', 'acaae' ); ?></a>
+
 						</a>
 					</li>
 					<li>
-						<a href="tel:+3600000000">+36 00 00 00 00</a>
+						<a href="tel:+3600000000">06 86 48 62 33</a>
 					</li>
 					<li>
-						<a href="mailto:adresse.mail@mail.fr">adresse.mail@mail.fr</a>
+						<a href="mailto:adresse.mail@mail.fr">aacaae@orange.fr</a>
 					</li>
 				</ul>
 			</div>
@@ -51,7 +51,7 @@
 				<h4 class="footer-heading"><?php esc_html_e( 'Newsletter', 'acaae' ); ?></h4>
 					<ul class="footer-links">
     				<li>
-        			<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'newsletter-2' ) ) ); ?>"><?php esc_html_e( 'Rejoignez nous !', 'acaae' ); ?></a>
+						<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'newsletter' ) ) ); ?>"><?php esc_html_e( 'Rejoignez nous !', 'acaae' ); ?></a>
     				</li>
 					</ul>
 			</div>
@@ -63,7 +63,6 @@
 			<p class="footer-copy">
 				<?php
 				printf(
-					/* translators: %s: year and site name */
 					esc_html__( 'Copyright © %1$s %2$s. Tous droits réservés.', 'acaae' ),
 					date_i18n( 'Y' ),
 					'<a href="' . esc_url( home_url( '/' ) ) . '">ACAAE</a>'

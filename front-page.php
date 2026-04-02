@@ -97,4 +97,5 @@ get_header();
 
     </div>
 </section>
+<script src="<?php echo get_template_directory_uri(); ?>/js/galerie.js"></script>
 <?php get_footer(); ?>

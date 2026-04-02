@@ -36,9 +36,6 @@
                 <li <?php if (is_page('les-membres')) echo 'class="current-menu-item"'; ?>>
                     <a href="<?php echo esc_url(home_url('/membres')); ?>">Les membres</a>
                 </li>
-                <li <?php if (is_page('galerie')) echo 'class="current-menu-item"'; ?>>
-                    <a href="<?php echo esc_url(home_url('/galerie')); ?>">Galerie</a>
-                </li>
                 <li <?php if (is_page('actualites') || is_home()) echo 'class="current-menu-item"'; ?>>
                     <a href="<?php echo esc_url(home_url('/actualites')); ?>">Actualités</a>
                 </li>
@@ -65,9 +62,6 @@
             </li>
             <li <?php if (is_page('membres')) echo 'class="current-menu-item"'; ?>>
                 <a href="<?php echo esc_url(home_url('/membres')); ?>">Les membres</a>
-            </li>
-            <li <?php if (is_page('galerie')) echo 'class="current-menu-item"'; ?>>
-                <a href="<?php echo esc_url(home_url('/galerie')); ?>">Galerie</a>
             </li>
             <li <?php if (is_page('actualites') || is_home()) echo 'class="current-menu-item"'; ?>>
                 <a href="<?php echo esc_url(home_url('/actualites')); ?>">Actualités</a>

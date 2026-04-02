@@ -49,11 +49,11 @@
 			<!-- Colonne 3 : Newsletter -->
 			<div class="footer-col">
 				<h4 class="footer-heading"><?php esc_html_e( 'Newsletter', 'acaae' ); ?></h4>
-				<ul class="footer-links">
-					<li>
-						<a href="#newsletter"><?php esc_html_e( 'Rejoignez nous !', 'acaae' ); ?></a>
-					</li>
-				</ul>
+					<ul class="footer-links">
+    				<li>
+        			<a href="<?php echo esc_url( get_permalink( get_page_by_path( 'newsletter-2' ) ) ); ?>"><?php esc_html_e( 'Rejoignez nous !', 'acaae' ); ?></a>
+    				</li>
+					</ul>
 			</div>
 
 		</div><!-- .footer-columns -->

@@ -8,6 +8,7 @@
 get_header();
 ?>
 
+
 <main id="primary" class="site-main association-page">
 
     <!-- Bande blanche supérieure -->
@@ -50,10 +51,50 @@ get_header();
         </div><!-- .assoc-card -->
     </div><!-- .assoc-green-zone -->
 
-    <!-- Bande blanche inférieure -->
-    <div class="assoc-band assoc-band--bottom"></div>
+<!-- Section Galerie -->
+<section class="galerie-section">
+    <div class="galerie-wrapper">
 
-</main>
+        <?php
+        $images = [
+            get_template_directory_uri() . '/images/galerie_image1.jpg',
+            get_template_directory_uri() . '/images/galerie_image2.jpg',
+            get_template_directory_uri() . '/images/galerie_image3.jpg',
+            get_template_directory_uri() . '/images/galerie_image4.jpg',
+            get_template_directory_uri() . '/images/galerie_image5.jpg',
+            get_template_directory_uri() . '/images/galerie_image6.jpg',
+            get_template_directory_uri() . '/images/galerie_image7.jpg',
+            get_template_directory_uri() . '/images/galerie_image8.jpg',
+            get_template_directory_uri() . '/images/galerie_image9.jpg',
+            get_template_directory_uri() . '/images/galerie_image10.jpg',
+        ];
+        $chunks = array_chunk($images, 6);
+        ?>
 
-<?php
-get_footer();
+        <div class="galerie-slider" id="galerie-slider">
+            <?php if (!empty($chunks)) : ?>
+                <?php foreach ($chunks as $index => $group) : ?>
+                    <div class="galerie-slide <?php echo $index === 0 ? 'active' : ''; ?>">
+                        <div class="galerie-grid">
+                            <?php foreach ($group as $src) : ?>
+                                <div class="galerie-item">
+                                    <img src="<?php echo esc_url($src); ?>" alt="Image galerie">
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else : ?>
+                <div class="galerie-empty">Aucune image disponible.</div>
+            <?php endif; ?>
+        </div>
+
+        <!-- Flèches -->
+        <div class="galerie-controls">
+            <button class="galerie-prev" id="galerie-prev" aria-label="Précédent">&#60;</button>
+            <button class="galerie-next" id="galerie-next" aria-label="Suivant">&#62;</button>
+        </div>
+
+    </div>
+</section>
+<?php get_footer(); ?>
